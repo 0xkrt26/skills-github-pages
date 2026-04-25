@@ -48,7 +48,7 @@ Unfortunately no. But good news: even in the worst case scenario, where all calc
 
 ### Wait, why would hashes be identical? Aren't they all unique?
 
-While it's our goal to make hashes unique and do our best to avoid collisions, some poorly chosen variables can still lead to the pigeonhole principle (it's a fancy name for having collisions, you can read more about it here:  https://math.mit.edu/~fgotti/docs/Courses/C.%20Combinatorial%20Analysis/1.%20Pigeonhole%20Principle/Pigeonhole%20Principle.pdf). That's why even after hash values match, Rabin-Karp algorithm still compares string values to exclude collisions.
+While it's our goal to make hashes unique and do our best to avoid collisions, some poorly chosen variables can still lead to the pigeonhole principle (it's a fancy name for having collisions, you can read more about it [here](https://math.mit.edu/~fgotti/docs/Courses/C.%20Combinatorial%20Analysis/1.%20Pigeonhole%20Principle/Pigeonhole%20Principle.pdf)). That's why even after hash values match, Rabin-Karp algorithm still compares string values to exclude collisions.
 
 ### But why do collisions happen?
 
@@ -87,7 +87,7 @@ we get:
 ```
 That will lead to an uneven distribution, where baskets 3, 6, 9 and 0 will be full, whereas other baskets will be completely empty. Therefore we need to reduce the number of dividers, to prevent a worst case scenario and achieve an even distribution. 
 
-*If you are looking for illustrations and more detailed but simple explanation, you can find them here https://cs.stackexchange.com/a/157627)*
+*If you are looking for illustrations and more detailed but simple explanation, you can find them [here](https://cs.stackexchange.com/a/157627)*
 
 
 ### So if the number of collisions is defined by p, why would we need to use b? Why not just adding character values and mod them? 
