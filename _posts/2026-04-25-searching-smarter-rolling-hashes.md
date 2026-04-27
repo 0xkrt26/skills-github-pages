@@ -17,7 +17,7 @@ This is what polynomial hash looks like:
 ```
 *Note: if we leave mod p away, we'll be left with the same algorithm we use to convert numbers for example  from binary to decimal system (for binary b = 2).*
 
-### But why calculating hash function when we can just straight ahead compare characters?
+### But why calculate hash function when we can just straight ahead compare characters?
 
 This is a legitimate way to compare strings called a naive string comparison, but i wouldn't recommend it for large texts. It will be too long and not as elegant as Rabin-Karp algorithm. Take a look yourself: imagine you have a string out of 17 letters, for example "abbrabraarbababra", and you need to write a program that will find how many times in this string there's a 3-letter combination "abr". If you use a naive string comparison you'll probably write something like this:
 ```
@@ -42,7 +42,7 @@ And we don't even have to calculate a hash function for each triple from scratch
 ```
 	Hnew = (b*(Hold -c1*b^(n-1))+cnew) mod p,
 ```
-which just basically removes first character of the triple and adds the next one.
+which basically removes first character of the triple and adds the next one.
 
 ### Is Rabin-Karp algorithm always efficient?
 
@@ -104,13 +104,13 @@ Those b constructions add weight to each value making repetitions less likely.
 
 ### But what size for b should we choose?
 
-Depends on the alphabet you're using. Usually the value of b is 256, which covers all ASCII characters), but it can also be smaller or bigger. Just make sure it covers all the characters your alphabet has, otherwise it'll also lead to collisions. But be careful: if the value of b is too big it can result in overflow.
+Depends on the alphabet you're using. Usually the value of b is 256, which covers all ASCII characters, but it can also be smaller or bigger. Just make sure it covers all the characters your alphabet has, otherwise it'll also lead to collisions. But be careful: if the value of b is too big it can result in overflow.
 
 ### And how exactly is Rabin-Karp method used in modern cryptography?
 
 Even though the Rabin-Karp algorithm is nowadays used primarily for spell checking and bio-informatics, just like other string matching algorithms, it can also be used in network intrusion detection systems to verify the data packets traveling through the network or in digital forensics to find evidence within digital data. Rabin-Karp algorithm introduced a concept of polynomial hashing, however, cryptographic hashing required fundamentally different construction that we'll talk about next time.
 
-*P.S. This post was partially inspired by [The Evolution of Hashing Algorithms](https://guptadeepak.com/the-evolution-of-hashing-algorithms-from-md5-to-modern-day/). It credits Rabin-Karp as the origin of hashing history, which, as i found out after a deeper research, isn't quite accurate. Hashing goes back further than 1987, but that's a story for the next post.*
+*P.S. This post was partially inspired by [The Evolution of Hashing Algorithms](https://guptadeepak.com/the-evolution-of-hashing-algorithms-from-md5-to-modern-day/). It credits Rabin-Karp as the origin of hashing history, which, as I found out after a deeper research, isn't quite accurate. Hashing goes back further than 1987, but that's a story for the next post.*
 
 ### My sources and further readings: 
 [MIT Rabin-Karp Algorithm](https://people.csail.mit.edu/alinush/6.006-spring-2014/rec06-rabin-karp-spring2011.pdf)
