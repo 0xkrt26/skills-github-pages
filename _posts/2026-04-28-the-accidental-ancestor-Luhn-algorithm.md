@@ -107,7 +107,9 @@ That's why nowadays, numbers that require verification, like your credit card nu
 
 ### Further notes
 
-A year before, in 1953 Luhn introduced the concept that would later serve as a foundation for the hash tables. In the internal IBM memo, he introduces the idea of using math to organize data into searchable buckets, which is basically what we call hash tables nowadays. As it was an internal IBM memo, it doesn't have any public access, therefore all the information can be taken only from the secondary source, an [IEEE Spectrum article](https://spectrum.ieee.org/hans-peter-luhn-and-the-birth-of-the-hashing-algorithm). Rather than repeat it here, I'd recommend reading the [IEEE Spectrum article](https://spectrum.ieee.org/hans-peter-luhn-and-the-birth-of-the-hashing-algorithm) directly. It explains the idea with a clear telephone number database example.
+A year before, in 1953 Luhn introduced the concept that would later serve as a foundation for the hash tables. In the internal IBM memo, he introduces the idea of using math to organize data into searchable buckets, which is basically what we call hash tables nowadays. 
+
+As it was an internal IBM memo, it doesn't have any public access, therefore all the information can be taken only from the secondary source, an [IEEE Spectrum article](https://spectrum.ieee.org/hans-peter-luhn-and-the-birth-of-the-hashing-algorithm). Rather than repeat it here, I'd recommend reading the [IEEE Spectrum article](https://spectrum.ieee.org/hans-peter-luhn-and-the-birth-of-the-hashing-algorithm) directly. It explains the idea with a clear telephone number database example.
 
 The mathematics behind Luhn's concept for such information storage had to be modified later to improve transformation, guarantee even distribution and minimize collisions. [Rabin-Karp algorithm](https://0xkrt26.github.io/math_behind_security/2026/04/25/searching-smarter-rolling-hashes.html) that I've already written about provides some solutions to these problems. 
 
