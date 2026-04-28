@@ -73,11 +73,11 @@ Otherwise the number is invalid. For example if instead of 6 in the original num
 ### Does it really work for all the numbers?
 
 Almost. Luhn Algorithm can catch all the single digit errors. Let's take a look at this table that shows all 10 possible digits and their substitution:
-```
+
 | Original digit | 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 |
 |---|---|---|---|---|---|---|---|---|---|---|
 | Substitution | 0 | 2 | 4 | 6 | 8 | 1 | 3 | 5 | 7 | 9 |
-```
+
 We can see, that the second row is just a permutation of the first one. This means that every original digit gets assigned its unique substitution and therefore each mistype will result in a changed checksum. For example:
 ```
 Original digits: 2 6
