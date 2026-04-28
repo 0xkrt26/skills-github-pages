@@ -64,8 +64,8 @@ Not exactly, the number of collisions (preferably their absence) depends primari
 p = 7,
 
 	then 1 mod 7 = 1
-		 2 mod 7 = 2
-		 3 mod 7 = 3
+	2 mod 7 = 2
+	3 mod 7 = 3
 		 ...
 		 6 mod 7 = 6
 		 7 mod 7 = 0
