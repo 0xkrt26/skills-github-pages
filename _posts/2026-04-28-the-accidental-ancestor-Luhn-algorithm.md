@@ -53,7 +53,7 @@ etc
 
 Append this check digit to the number from step 2.
 
-The check digit should be appended in its original form, therefore on an even position. In our example just like in the original device it's added on the first from the right or the 8th position.
+The check digit should be appended in its original form, therefore on an even position. In our example, just like in the original device, it's the last, 8th one.
 ```
 68864017
 ```
