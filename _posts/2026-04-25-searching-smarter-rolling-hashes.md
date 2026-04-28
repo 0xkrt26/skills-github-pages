@@ -9,11 +9,11 @@ date: 2026-04-25
 
 This is what polynomial hash looks like:
 ```
-	H=c1*b^(n-1)+c2*b^(n-2)+...cn*b^(0) mod p,
-		where cn = character n of the plaintext
-		n = number of characters in the plaintext
-		p = suitable prime number
-		b = base of the code system (256 etc)
+H=c1*b^(n-1)+c2*b^(n-2)+...cn*b^(0) mod p,
+	where cn = character n of the plaintext
+	n = number of characters in the plaintext
+	p = suitable prime number
+	b = base of the code system (256 etc)
 ```
 *Note: if we leave mod p away, we'll be left with the same algorithm we use to convert numbers for example  from binary to decimal system (for binary b = 2).*
 
@@ -21,14 +21,14 @@ This is what polynomial hash looks like:
 
 This is a legitimate way to compare strings called a naive string comparison, but i wouldn't recommend it for large texts. It will be too long and not as elegant as Rabin-Karp algorithm. Take a look yourself: imagine you have a string out of 17 letters, for example "abbrabraarbababra", and you need to write a program that will find how many times in this string there's a 3-letter combination "abr". If you use a naive string comparison you'll probably write something like this:
 ```
-	text = "abbrabraarbababra"
-	pattern = "abr"
+text = "abbrabraarbababra"
+pattern = "abr"
 
-	for each character i in the text:
-    	    if text[i] == 'a':
-        	if text[i+1] == 'b':
-           	    if text[i+2] == 'r':
-               		print "found at position", i
+for each character i in the text:
+   	    if text[i] == 'a':
+       	if text[i+1] == 'b':
+       	    if text[i+2] == 'r':
+           		print "found at position", i
 ```
 This algorithm checks every single character, some of them even multiple times.
 
@@ -40,11 +40,12 @@ It works pretty simply. Instead of checking every letter in a triple, you treat 
 
 And we don't even have to calculate a hash function for each triple from scratch! Rolling hash function calculates the next hash value based on the old hash value using this formula:
 ```
-	Hnew = (b*(Hold -c1*b^(n-1))+cnew) mod p,
+Hnew = (b*(Hold -c1*b^(n-1))+cnew) mod p,
 ```
 which basically removes first character of the triple and adds the next one.
 
 ### Is Rabin-Karp algorithm always efficient?
+
 
 Unfortunately no. But good news: even in the worst case scenario, where all calculated hashes are identical, the efficiency will be the same as by naive comparison. So it's definitely worth trying.
 
@@ -60,19 +61,19 @@ To answer this question, let's take a look at polynomial hash again. We have two
 
 Not exactly, the number of collisions (preferably their absence) depends primarily on the chosen p value. The larger p is the less collisions we'll get. Why? Let's imagine:
 ```
-	p = 7,
+p = 7,
 
-		then 1 mod 7 = 1
-		2 mod 7 = 2
-		3 mod 7 = 3
-		...
-		6 mod 7 = 6
-		7 mod 7 = 0
+	then 1 mod 7 = 1
+		 2 mod 7 = 2
+		 3 mod 7 = 3
+		 ...
+		 6 mod 7 = 6
+		 7 mod 7 = 0
 	
-		and...
-		all over again: 8 mod 7 = 1
-				9 mod 7 = 2
-				etc.
+	and...
+	all over again: 8 mod 7 = 1
+					9 mod 7 = 2
+					etc.
 ```
 Which gives us only seven unique values. Now if we took p = 23, we would have had 23 unique values. And so on. The bigger prime number we take, the less likely we will have repetitions. But also keep in mind that it shouldn't be too big, otherwise it can lead to performance issues.
 
@@ -81,11 +82,11 @@ Which gives us only seven unique values. Now if we took p = 23, we would have ha
 
 It doesn't have to, but it again reduces collisions. Imagine p as a number of baskets we can put our numbers in. If we take p=12, then we have 12 baskets. At first, if we do the same modulo operations we did for p=7 in the previous example, we'll end up with the same distribution. But in real life numbers usually don't come in as a perfectly sorted row. Worst Case scenario: we get only numbers dividable by 3. So instead of:
 ```
-	1, 2, 3, 4, 5, 6... 11, 12, etc,
+1, 2, 3, 4, 5, 6... 11, 12, etc,
 ```
 we get:
 ```
-	3, 6, 9, 12, 15, 18, etc.
+3, 6, 9, 12, 15, 18, etc.
 ```
 That will lead to an uneven distribution, where baskets 3, 6, 9 and 0 will be full, whereas other baskets will be completely empty. Therefore we need to reduce the number of dividers, to prevent a worst case scenario and achieve an even distribution. 
 
@@ -96,9 +97,9 @@ That will lead to an uneven distribution, where baskets 3, 6, 9 and 0 will be fu
 
 The problem is, that different strings can result in the same sum. Let's take a look at this example (instead of ascii we'll just take the alphabet position of the letter):
  ```		
-		be = 2+5 = 7
-		eb = 5+2 = 7, 
-		just like cd = 3+4 = 7 
+be = 2+5 = 7
+eb = 5+2 = 7, 
+just like cd = 3+4 = 7 
 ```
 Those b constructions add weight to each value making repetitions less likely.
 
