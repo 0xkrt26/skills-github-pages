@@ -8,6 +8,9 @@ def main():
     try:
         prime = int(input("Please enter the prime number: "))
         #Adjust the value to the length of your text
+        #You can use the formula for the probability of collision 
+            #P(collisions)=text.length/prime
+    
     except ValueError:
         print("Please enter a valid integer for the prime.")
         return
