@@ -40,7 +40,10 @@ def rolling_hash_search(text, pattern, m, n, hash_text, hash_pattern, prime):
     match_count = 0
     # Pre-calculate (256**(n-1)) to use in the rolling formula
     h_multiplier = pow(BASE, n - 1, prime)
-
+    #pow is a built-in function for Modular Exponentiation
+    #pow is the same as (BASE  (n-1)) % prime
+    #We do mod already here to keep the number small and calculations fast
+    
     for i in range(m - n + 1):
         # Check for a match
         if hash_text == hash_pattern:
