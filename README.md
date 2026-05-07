@@ -1,3 +1,6 @@
+#Math behind Security
+###Welcome to my blog!
+
 How is my data secured? How was it kept safe throughout history? Can I decrypt it without a key?
 
 At school these questions wouldn't leave me alone, so I sat down and wrote a program that would break a Vigenère cipher (mostly by combining pieces of code I found that were supposed to do it). Later they led me to apply to Technical University of Munich (TUM) to study Computer Science. And eventually, they're what helped me realize I belong in Mathematics instead.
