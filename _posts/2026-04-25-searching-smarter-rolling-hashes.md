@@ -3,6 +3,9 @@ title: "Searching smarter - Plagiarism Detection with Rolling Hashes"
 date: 2026-04-25
 ---
 
+*An implementation for this algorithm can be found in [my GitHub Repository](https://github.com/0xkrt26/math_behind_security/blob/main/implementations/rabin_karp.py)*
+
+
 1987 Michael O. Rabin and Richard M. Karp introduced rolling hashes and polynomial hashing — concepts that reappear throughout modern cryptography and are widely used for plagiarism detection.
 
 ### How does it work?
