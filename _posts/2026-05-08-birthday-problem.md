@@ -96,9 +96,9 @@ p_1 &= \binom{k}{s} \cdot (n-1)^{k-s} \cdot n^{-k} \\
 &= \binom{k}{s} \cdot \left(\frac{1}{n}\right)^s \cdot \left(1 - \frac{1}{n}\right)^{k-s}
 \end{aligned}$$
 
-p = $$\frac{1}{n}$$ (probability of success)
+$$p = \frac{1}{n} \quad \text{(probability of success)}$$
 
-q = 1 - $$\frac{1}{n}$$ (probability of failure)
+$$q = 1 - \frac{1}{n} \quad \text{(probability of failure)}$$
 
 This leaves us with the formula of the Bernoulli sequence we learned at high school.
 
@@ -178,7 +178,7 @@ In his paper, von Mises goes on to calculate the exact probability distribution,
 
 The expected value also allows us to get the approximate representation of the number of collisions that will occur in the hash table depending on the values we choose.
 
-Moreover, there is a special brute-force attack in cybersecurity called the Birthday Attack that uses the math behind the Birthday Problem to create collisions that will break the system. The attacker generates random inputs until two of them produce the same hash output. That will happen after about √n attempts. For example, SHA-256 has $$2^256$$ outputs. That would requier $$2^128$$ attempts to crack. Notice that the attacker is not waiting for a specific hash value to occur double, any collision would be enough to stop the system from working. 
+Moreover, there is a special brute-force attack in cybersecurity called the Birthday Attack that uses the math behind the Birthday Problem to create collisions that will break the system. The attacker generates random inputs until two of them produce the same hash output. That will happen after about √n attempts. For example, SHA-256 has $$2^{256}$$ outputs. That would requier $$2^{128}$$ attempts to crack. Notice that the attacker is not waiting for a specific hash value to occur double, any collision would be enough to stop the system from working. 
 
 We have already talked a bit about collisions in the hash tables [last time.](https://0xkrt26.github.io/math_behind_security/2026/04/28/the-accidental-ancestor-Luhn-algorithm.html) Now we know that the math behind hash tables' collisions is the math behind the Birthday Problem: days become table fields, people turn into hashes, but the calculations remain unchanged.
 
