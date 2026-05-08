@@ -20,7 +20,7 @@ $$P(\text{no matches}) = \frac{365}{365} \cdot \frac{364}{365} \cdot \frac{363}{
 
 for n=23:
 
-$$P(\text{no matches}) = \frac{365!}{365^23(365-23)!}= 0.4927$$ 
+$$P(\text{no matches}) = \frac{365!}{365^{23}(365-23)!}= 0.4927$$ 
 
 ...or about 50%.
 
