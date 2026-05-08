@@ -16,11 +16,13 @@ No matches means every birthday is unique. That means the first person can be bo
 $$P(\text{no matches}) = \frac{365}{365} \cdot \frac{364}{365} \cdot \frac{363}{365} \dots \frac{365-n+1}{365} = \frac{365!}{365^n(365-n)!}$$
 
 for n=23:
-	$$P(\text{no matches}) = \frac{365!}{365^23(365-23)!}= 0.4927$$ 
+
+$$P(\text{no matches}) = \frac{365!}{365^23(365-23)!}= 0.4927$$ 
 
 ...or about 50%.
 
 Another formula that you can often find on the internet after searching for the Birthday Paradox is an approximation based on calculating the probability for all the connections existing between 23 people:
+
 $$1 - \frac{1}{365} = \frac{364}{365}$$
 
 $$P = \left( \frac{364}{365} \right)^{\binom{23}{2}} \approx 0.4995$$
@@ -83,9 +85,9 @@ p_1 &= \binom{k}{s} \cdot (n-1)^{k-s} \cdot n^{-k} \\
 &= \binom{k}{s} \cdot \left(\frac{1}{n}\right)^s \cdot \left(1 - \frac{1}{n}\right)^{k-s}
 \end{aligned}$$
 
-$$p = \frac{1}{n} \quad \text{(probability of success)}$$
+p = $\frac{1}{n} \quad \text{(probability of success)}$
 
-$$q = 1 - \frac{1}{n} \quad \text{(probability of failure)}$$
+q = $1 - \frac{1}{n} \quad \text{(probability of failure)}$
 
 *This leaves us with the formula of the Bernoulli sequence we learned at high school*
 
