@@ -10,7 +10,7 @@ Note: This post turned out a little different from the previous ones. It's more 
 <br>
 What is the probability that you are sharing the same birthday with people around you? Well, if you're alone in the room, then it's most certainly zero. Also the more people there are around, the higher the chances should get. But what if I told you that in a room with only 23 people there's already a 50% chance for two of them to have matching birthdays? And I can quite easily prove it with just school math.
 
-What does it mean to calculate a probability for at least two people to have a matching birthday? It's the same as calculating the probability for no one in the group to be born on the same day and subtracting it from one:
+What does it mean to calculate a probability for at least two people to have a matching birthday? It's the same as calculating the  inverse probability for no one in the group to be born on the same day:
 
 $$P(\text{at least one match}) = 1 - P(\text{no matches})$$
 
@@ -68,17 +68,17 @@ Mises calls such probability an occupancy probability, as it shows how many of t
 <br>
 Let's take a look at his calculations. For this example we'll have n days and k people in the room.
 
-The probability for each n to be occupied is 1/n, so for all k people the probability is:
+The probability for each n to be occupied is 1/n, so for all k people it turns into:
 
 $$\underbrace{\frac{1}{n} \times \frac{1}{n} \times \dots \times \frac{1}{n}}_{k \text{ times}} = \frac{1}{n^k} = n^{-k}$$
 
-and it stays the same for each distribution.
+which is how we calculate the chance of one exact sequence happening.
 
-Then we'll build the probability p1 for all the birthday distributions that have s people on the first calendar day. There are 'C(k s)' ways to choose s out of k people, and for the remaining n-1 days we have (k-s) remaining employees that can be distributed like this:
+Then we'll build the probability p1 for all the birthday distributions that have s people on the first calendar day. There are $$\binom{k}{s}$$ ways to choose s out of k people, and for the remaining n-1 days we have (k-s) remaining employees that can be distributed like this:
 
 $$(n-1)^{k-s}$$
 
-The complete formula for 'p1' is:
+The complete formula for p1 is:
 
 $$p_1 = \binom{k}{s} \cdot n^{-k} \cdot (n-1)^{k-s}$$
 
@@ -106,7 +106,7 @@ This leaves us with the formula of the Bernoulli sequence we learned at high sch
 <br>
 <br>
 
-The same formula works for 'p2, p3,.. pn'. That gives us: 
+The same formula works for p2, p3,.. pn and gives us: 
 
 $$p_1 + p_2 + p_3 + \dots + p_n = n \cdot p_1$$
 
@@ -143,7 +143,7 @@ Distribution1 appears only in Array2, therefore will be counted only once, while
 <br>
 <br>
 
-This means that n*p1 provides us with a weighted sum and can be interpreted as an expected value 'E(x_s)'. All we have to do is paste the formula for p1 that we've already derived before:
+This means that $$n \cdot p1$$ provides us with a weighted sum and can be interpreted as an expected value 'E(x_s)'. All we have to do is paste the formula for p1 that we've already derived before:
 
 $$E(x_s) = n \cdot \binom{k}{s} \cdot (n-1)^{k-s} \cdot n^{-k}$$
 
