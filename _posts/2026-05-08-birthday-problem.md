@@ -2,8 +2,11 @@
 title: "When is your birthday? - The Math Behind Hash Collisions"
 date: 2026-05-08
 ---
+<div style="color: #3474B4;">
 
 *Note: This post turned out a little different from the previous ones. It's more of an essay than a dialogue. I tried restructuring it multiple times, but it kept wanting to be linear. And you know, sometimes the topic just has its own shape, so I left it like this. Enjoy!*
+
+</div>
 
 What is the probability that you are sharing the same birthday with people around you? Well, if you're alone in the room, then it's most certainly zero. Also the more people there are around, the higher the chances should get. But what if I told you that in a room with only 23 people there's already a 50% chance for two of them to have matching birthdays? And I can quite easily prove it with just school math.
 
@@ -57,7 +60,11 @@ Von Mises didn't just change the calculations. He completely changed the perspec
 
 Imagine there are 365 boxes in front of you. 60 balls are being thrown in these boxes randomly. Math bureau employees choose the third box. For them success is having three or more balls in  that exact box. Von Mises suggests watching all the boxes and count how many of them will have three or more balls in the end. It's clear that his definition of success is much broader, and therefore, the probability is also much higher.
 
+<div style="color: #3474B4;">
+  
 *Mises calls such probability an occupancy probability, as it shows how many of the boxes or, in our case, days are occupied one, two, three, etc. times*
+
+</div>
 
 Let's take a look at his calculations. For this example we'll have n days and k people in the room.
 
@@ -75,7 +82,9 @@ The complete formula for 'p1' is:
 
 $$p_1 = \binom{k}{s} \cdot n^{-k} \cdot (n-1)^{k-s}$$
 
-*We can also translate 'p1' into Bernoulli trials:
+<div style="color: #3474B4;">
+  
+*We can also translate 'p1' into Bernoulli trials:*
 
 $$\begin{aligned}
 p_1 &= \binom{k}{s} \cdot (n-1)^{k-s} \cdot n^{-k} \\
@@ -89,7 +98,9 @@ p = $$\frac{1}{n} \quad \text{(probability of success)}$$
 
 q = 1 - $$\frac{1}{n} \quad \text{(probability of failure)}$$
 
-*This leaves us with the formula of the Bernoulli sequence we learned at high school*
+*This leaves us with the formula of the Bernoulli sequence we learned at high school.*
+
+</div>
 
 The same formula works for 'p2, p3,.. pn'. That gives us: 
 
@@ -97,6 +108,8 @@ $$p_1 + p_2 + p_3 + \dots + p_n = n \cdot p_1$$
 
 This sum covers all the distributions that have at least one day with s birthdays. All of them that have more than one such day will be counted multiple times. For example, if there are two days with s birthdays, the distribution will be counted twice, for three days - three times, and so on. 
 
+<div style="color: #3474B4;">
+  
 *It's like having a lot of arrays that represent the number of birthdays on each day (in this example we'll have only four days):*
 
 *For s = 7:*
@@ -119,6 +132,8 @@ $$\begin{aligned}
 \end{aligned}$$
 
 *Distribution1 appears only in Array2, therefore will be counted only once, while Distribution3 is a part of both Array1 and Array4, therefore will be counted twice.*
+
+</div>
 
 This means that n*p1 provides us with a weighted sum and can be interpreted as an expected value 'E(x_s)'. All we have to do is paste the formula for p1 that we've already derived before:
 
@@ -145,13 +160,17 @@ $$\frac{1}{0.22} \approx 4.5454$$
 
 Doesn't seem that rare anymore, does it? Especially if we compare it to the possibility of a few thousandths, that, on the other hand, will happen only about once in every 1500-2000 groups of 60 people. Now that's actually rare.
 
+<div style="color: #3474B4;">
+  
 *Of course, these calculations don't consider seasonal variation in birth density, twins, selection bias, leap years etc. which von Mises himself explicitly mentions at the end of his article. If you look at statistics, in the Northern Hemisphere, children are more often born in summer; in the U.S., they're more likely to be conceived on Christmas and New Year's Eve; and due to C-sections and induced labor, Mondays and Tuesdays also have higher birth rates.*
+
+</div>
 
 In his paper, von Mises goes on to calculate the exact probability distribution, but the expected value is all we need to prove that the math bureau was looking at the problem through the wrong lens. 
 
 The expected value also allows us to get the approximate representation of the number of collisions that will occur in the hash table depending on the values we choose.
 
-Moreover, there is a special brute-force attack in cybersecurity called the Birthday Attack that uses the math behind the Birthday Problem to create collisions that will break the system. The attacker generates random inputs until two of them produce the same hash output. That will happen after about √n attempts. For example, SHA-256 has `2^256` outputs. That would requier `2^128` attempts to crack. Notice that the attacker is not waiting for a specific hash value to occur double, any collision would be enough to stop the system from working. 
+Moreover, there is a special brute-force attack in cybersecurity called the Birthday Attack that uses the math behind the Birthday Problem to create collisions that will break the system. The attacker generates random inputs until two of them produce the same hash output. That will happen after about √n attempts. For example, SHA-256 has $$2^256$$ outputs. That would requier $$2^128$$ attempts to crack. Notice that the attacker is not waiting for a specific hash value to occur double, any collision would be enough to stop the system from working. 
 
 We have already talked a bit about collisions in the hash tables [last time.](https://0xkrt26.github.io/math_behind_security/2026/04/28/the-accidental-ancestor-Luhn-algorithm.html) Now we know that the math behind hash tables' collisions is the math behind the Birthday Problem: days become table fields, people turn into hashes, but the calculations remain unchanged.
 
