@@ -85,9 +85,9 @@ p_1 &= \binom{k}{s} \cdot (n-1)^{k-s} \cdot n^{-k} \\
 &= \binom{k}{s} \cdot \left(\frac{1}{n}\right)^s \cdot \left(1 - \frac{1}{n}\right)^{k-s}
 \end{aligned}$$
 
-p = $\frac{1}{n} \quad \text{(probability of success)}$
+p = $$\frac{1}{n} \quad \text{(probability of success)}$$
 
-q = $1 - \frac{1}{n} \quad \text{(probability of failure)}$
+q = 1 - $$\frac{1}{n} \quad \text{(probability of failure)}$$
 
 *This leaves us with the formula of the Bernoulli sequence we learned at high school*
 
@@ -99,9 +99,9 @@ This sum covers all the distributions that have at least one day with s birthday
 
 *It's like having a lot of arrays that represent the number of birthdays on each day (in this example we'll have only four days):*
 
-For $s = 7$:
+*For s = 7:*
 
-Distributions (Birthdays per day):
+*Distributions (Birthdays per day):*
 
 $$\begin{aligned}
 \text{Distribution}_1 &: [8, \mathbf{7}, 4, 6] \\
@@ -109,7 +109,7 @@ $$\begin{aligned}
 \text{Distribution}_3 &: [\mathbf{7}, 4, 5, \mathbf{7}]
 \end{aligned}$$
 
-Arrays (The days being checked for exactly $s$):
+*Arrays (The days being checked for exactly $s$):*
 
 $$\begin{aligned}
 \text{Array}_1 &: [8, 4, \mathbf{7}] \quad \text{(Day 1)} \\
