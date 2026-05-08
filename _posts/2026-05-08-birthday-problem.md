@@ -116,9 +116,9 @@ This sum covers all the distributions that have at least one day with s birthday
 <br>
 <div style="font-style: italic; color: #3474B4;">
   
-It's like having a lot of arrays that represent the number of birthdays on each day (in this example we'll have only four days):
+It's like having a lot of arrays that represent the number of birthdays on each day (in this example we'll have only four days):<br>
 
-For s = 7:
+For s = 7:<br>
 
 Distributions (Birthdays per day):
 
