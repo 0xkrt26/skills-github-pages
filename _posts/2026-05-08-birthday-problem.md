@@ -81,7 +81,8 @@ $$(n-1)^{k-s}$$
 The complete formula for 'p1' is:
 
 $$p_1 = \binom{k}{s} \cdot n^{-k} \cdot (n-1)^{k-s}$$
-
+<br>
+<br>
 <div style="font-style: italic; color: #3474B4;">
   
 We can also translate 'p1' into Bernoulli trials:
@@ -94,9 +95,9 @@ p_1 &= \binom{k}{s} \cdot (n-1)^{k-s} \cdot n^{-k} \\
 &= \binom{k}{s} \cdot \left(\frac{1}{n}\right)^s \cdot \left(1 - \frac{1}{n}\right)^{k-s}
 \end{aligned}$$
 
-p = $$\frac{1}{n} \quad \text{(probability of success)}$$
+p = $$\frac{1}{n}$$ (probability of success)
 
-q = 1 - $$\frac{1}{n} \quad \text{(probability of failure)}$$
+q = 1 - $$\frac{1}{n}$$ (probability of failure)
 
 This leaves us with the formula of the Bernoulli sequence we learned at high school.
 
@@ -107,7 +108,8 @@ The same formula works for 'p2, p3,.. pn'. That gives us:
 $$p_1 + p_2 + p_3 + \dots + p_n = n \cdot p_1$$
 
 This sum covers all the distributions that have at least one day with s birthdays. All of them that have more than one such day will be counted multiple times. For example, if there are two days with s birthdays, the distribution will be counted twice, for three days - three times, and so on. 
-
+<br>
+<br>
 <div style="font-style: italic; color: #3474B4;">
   
 It's like having a lot of arrays that represent the number of birthdays on each day (in this example we'll have only four days):
