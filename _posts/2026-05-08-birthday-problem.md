@@ -81,6 +81,7 @@ $$(n-1)^{k-s}$$
 The complete formula for 'p1' is:
 
 $$p_1 = \binom{k}{s} \cdot n^{-k} \cdot (n-1)^{k-s}$$
+
 <br>
 <br>
 <div style="font-style: italic; color: #3474B4;">
@@ -103,11 +104,14 @@ This leaves us with the formula of the Bernoulli sequence we learned at high sch
 
 </div>
 <br>
+<br>
+
 The same formula works for 'p2, p3,.. pn'. That gives us: 
 
 $$p_1 + p_2 + p_3 + \dots + p_n = n \cdot p_1$$
 
 This sum covers all the distributions that have at least one day with s birthdays. All of them that have more than one such day will be counted multiple times. For example, if there are two days with s birthdays, the distribution will be counted twice, for three days - three times, and so on. 
+
 <br>
 <br>
 <div style="font-style: italic; color: #3474B4;">
@@ -137,6 +141,8 @@ Distribution1 appears only in Array2, therefore will be counted only once, while
 
 </div>
 <br>
+<br>
+
 This means that n*p1 provides us with a weighted sum and can be interpreted as an expected value 'E(x_s)'. All we have to do is paste the formula for p1 that we've already derived before:
 
 $$E(x_s) = n \cdot \binom{k}{s} \cdot (n-1)^{k-s} \cdot n^{-k}$$
