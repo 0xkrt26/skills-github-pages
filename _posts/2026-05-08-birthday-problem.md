@@ -2,12 +2,12 @@
 title: "When is your birthday? - The Math Behind Hash Collisions"
 date: 2026-05-08
 ---
-<div style="color: #3474B4;">
+<div style="font-style: italic; color: #3474B4;">
 
-*Note: This post turned out a little different from the previous ones. It's more of an essay than a dialogue. I tried restructuring it multiple times, but it kept wanting to be linear. And you know, sometimes the topic just has its own shape, so I left it like this. Enjoy!*
+Note: This post turned out a little different from the previous ones. It's more of an essay than a dialogue. I tried restructuring it multiple times, but it kept wanting to be linear. And you know, sometimes the topic just has its own shape, so I left it like this. Enjoy!
 
 </div>
-
+<br>
 What is the probability that you are sharing the same birthday with people around you? Well, if you're alone in the room, then it's most certainly zero. Also the more people there are around, the higher the chances should get. But what if I told you that in a room with only 23 people there's already a 50% chance for two of them to have matching birthdays? And I can quite easily prove it with just school math.
 
 What does it mean to calculate a probability for at least two people to have a matching birthday? It's the same as calculating the probability for no one in the group to be born on the same day and subtracting it from one:
@@ -60,12 +60,12 @@ Von Mises didn't just change the calculations. He completely changed the perspec
 
 Imagine there are 365 boxes in front of you. 60 balls are being thrown in these boxes randomly. Math bureau employees choose the third box. For them success is having three or more balls in  that exact box. Von Mises suggests watching all the boxes and count how many of them will have three or more balls in the end. It's clear that his definition of success is much broader, and therefore, the probability is also much higher.
 
-<div style="color: #3474B4;">
+<div style="font-style: italic; color: #3474B4;">
   
-*Mises calls such probability an occupancy probability, as it shows how many of the boxes or, in our case, days are occupied one, two, three, etc. times*
+Mises calls such probability an occupancy probability, as it shows how many of the boxes or, in our case, days are occupied one, two, three, etc. times.
 
 </div>
-
+<br>
 Let's take a look at his calculations. For this example we'll have n days and k people in the room.
 
 The probability for each n to be occupied is 1/n, so for all k people the probability is:
@@ -82,9 +82,9 @@ The complete formula for 'p1' is:
 
 $$p_1 = \binom{k}{s} \cdot n^{-k} \cdot (n-1)^{k-s}$$
 
-<div style="color: #3474B4;">
+<div style="font-style: italic; color: #3474B4;">
   
-*We can also translate 'p1' into Bernoulli trials:*
+We can also translate 'p1' into Bernoulli trials:
 
 $$\begin{aligned}
 p_1 &= \binom{k}{s} \cdot (n-1)^{k-s} \cdot n^{-k} \\
@@ -98,23 +98,23 @@ p = $$\frac{1}{n} \quad \text{(probability of success)}$$
 
 q = 1 - $$\frac{1}{n} \quad \text{(probability of failure)}$$
 
-*This leaves us with the formula of the Bernoulli sequence we learned at high school.*
+This leaves us with the formula of the Bernoulli sequence we learned at high school.
 
 </div>
-
+<br>
 The same formula works for 'p2, p3,.. pn'. That gives us: 
 
 $$p_1 + p_2 + p_3 + \dots + p_n = n \cdot p_1$$
 
 This sum covers all the distributions that have at least one day with s birthdays. All of them that have more than one such day will be counted multiple times. For example, if there are two days with s birthdays, the distribution will be counted twice, for three days - three times, and so on. 
 
-<div style="color: #3474B4;">
+<div style="font-style: italic; color: #3474B4;">
   
-*It's like having a lot of arrays that represent the number of birthdays on each day (in this example we'll have only four days):*
+It's like having a lot of arrays that represent the number of birthdays on each day (in this example we'll have only four days):
 
-*For s = 7:*
+For s = 7:
 
-*Distributions (Birthdays per day):*
+Distributions (Birthdays per day):
 
 $$\begin{aligned}
 \text{Distribution}_1 &: [8, \mathbf{7}, 4, 6] \\
@@ -122,7 +122,7 @@ $$\begin{aligned}
 \text{Distribution}_3 &: [\mathbf{7}, 4, 5, \mathbf{7}]
 \end{aligned}$$
 
-*Arrays (The days being checked for exactly $s$):*
+Arrays (The days being checked for exactly $s$):
 
 $$\begin{aligned}
 \text{Array}_1 &: [8, 4, \mathbf{7}] \quad \text{(Day 1)} \\
@@ -131,10 +131,10 @@ $$\begin{aligned}
 \text{Array}_4 &: [6, 2, \mathbf{7}] \quad \text{(Day 4)}
 \end{aligned}$$
 
-*Distribution1 appears only in Array2, therefore will be counted only once, while Distribution3 is a part of both Array1 and Array4, therefore will be counted twice.*
+Distribution1 appears only in Array2, therefore will be counted only once, while Distribution3 is a part of both Array1 and Array4, therefore will be counted twice.
 
 </div>
-
+<br>
 This means that n*p1 provides us with a weighted sum and can be interpreted as an expected value 'E(x_s)'. All we have to do is paste the formula for p1 that we've already derived before:
 
 $$E(x_s) = n \cdot \binom{k}{s} \cdot (n-1)^{k-s} \cdot n^{-k}$$
@@ -160,12 +160,12 @@ $$\frac{1}{0.22} \approx 4.5454$$
 
 Doesn't seem that rare anymore, does it? Especially if we compare it to the possibility of a few thousandths, that, on the other hand, will happen only about once in every 1500-2000 groups of 60 people. Now that's actually rare.
 
-<div style="color: #3474B4;">
+<div style="font-style: italic; color: #3474B4;">
   
-*Of course, these calculations don't consider seasonal variation in birth density, twins, selection bias, leap years etc. which von Mises himself explicitly mentions at the end of his article. If you look at statistics, in the Northern Hemisphere, children are more often born in summer; in the U.S., they're more likely to be conceived on Christmas and New Year's Eve; and due to C-sections and induced labor, Mondays and Tuesdays also have higher birth rates.*
+Of course, these calculations don't consider seasonal variation in birth density, twins, selection bias, leap years etc. which von Mises himself explicitly mentions at the end of his article. If you look at statistics, in the Northern Hemisphere, children are more often born in summer; in the U.S., they're more likely to be conceived on Christmas and New Year's Eve; and due to C-sections and induced labor, Mondays and Tuesdays also have higher birth rates.
 
 </div>
-
+<br>
 In his paper, von Mises goes on to calculate the exact probability distribution, but the expected value is all we need to prove that the math bureau was looking at the problem through the wrong lens. 
 
 The expected value also allows us to get the approximate representation of the number of collisions that will occur in the hash table depending on the values we choose.
