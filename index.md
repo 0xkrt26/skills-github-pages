@@ -9,10 +9,11 @@ The math behind why encryption works — and why it sometimes doesn't.
     display: none !important;
   }
   body {
-    background-image: url('/assets/images/background.jpg');
-    background-attachment: fixed;
+    background-image: url('background.jpg');
+    background-attachment: scroll;
     background-size: cover;
     background-position: center;
+    background-repeat: repeat-y;
   }
 
   .wrapper {
