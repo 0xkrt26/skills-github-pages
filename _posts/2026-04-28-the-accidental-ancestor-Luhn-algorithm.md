@@ -2,9 +2,9 @@
 title: "The Accidental Ancestor — How a Computer for Verifying Numbers Shaped Modern Hashing"
 date: 2026-04-28
 ---
+*An implementation for this algorithm can be found in my [GitHub Repository](https://github.com/0xkrt26/math_behind_security/blob/main/implementations/luhn_algorithm.py)*
 
-1954, Hans Peter Luhn filed for a US patent on a Computer for Verifying Numbers. This is one of the earliest examples of using mathematical transformations to verify data integrity, a 
-concept that became a foundation for modern hashes. Today you can find it under names Luhn Algorithm, Luhn Formula or Modulus 10 Algorithm.
+1954, Hans Peter Luhn filed for a US patent on a Computer for Verifying Numbers. This is one of the earliest examples of using mathematical transformations to verify data integrity, a concept that became a foundation for modern hashes. Today you can find it under names Luhn Algorithm, Luhn Formula or Modulus 10 Algorithm.
 
 ### How does this algorithm work?
 
@@ -51,10 +51,10 @@ etc
 
 ### Step 4.
 
-Append this check digit to the rightmost position of the number from step 2.
+Append this check digit to the rightmost position of the original number:
 
 ```
-68864017
+38462057
 ```
 ### And how does verifying work?
 
